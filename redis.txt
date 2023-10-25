@@ -1,0 +1,63 @@
+//delete all key in redis server
+flushall
+
+//set key and value
+set name "john"
+
+//get key value
+get "name"
+
+//set expire
+expire name 10
+
+//view expire time 
+ttl name
+
+//set with expire 
+setex name 10 "john"
+
+//get all keys
+keys *
+
+//set value in list
+lpush friends "john"
+
+//get list value
+lrange friends 0 -1
+
+//push begin
+lpush begin
+
+//push end
+rpush end 
+
+//delete begin
+lpop friends
+
+//delete end
+rpop friends
+
+//set unique value in list with prefix s
+(S)ADD
+SADD hobbies "i am a unique"
+
+//get sadd value
+SMEMBERS hobbies
+
+//remove value
+SREM "i am a unique"
+
+//sad in json form with prefix h
+HSET person name kyle (key=name, value=kyle)
+HSET person age 16 (key=age, value=16)
+
+//get name
+HGET person name (output: kyle)
+HGET person age (output: 16)
+
+//get key and value
+HGETALL person (print key and value)
+
+//delete key
+HDEL person age (delete age)
+
